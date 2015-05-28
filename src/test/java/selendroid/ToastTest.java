@@ -16,7 +16,8 @@ public class ToastTest {
 				"io.selendroid.testapp:0.15.0");
 		WebDriver driver = new SelendroidDriver(capa);
 		// WebElement inputField = driver.findElement(By.id("my_text_field"));
-		WebElement displayToast = driver.findElement(By.xpath("//Button[@id='showToastButton']"));
+		WebElement displayToast = driver.findElement(By
+				.xpath("//Button[@id='showToastButton']"));
 		displayToast.click();
 		waitForElement(By.partialLinkText("Hello selendroid toast!"), 3, driver);
 		driver.quit();
@@ -24,7 +25,8 @@ public class ToastTest {
 
 	public static WebElement waitForElement(By by, int timeout, WebDriver driver) {
 		WebDriverWait wait = new WebDriverWait(driver, timeout);
-		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(by));
+		WebElement element = wait.until(ExpectedConditions
+				.presenceOfElementLocated(by));
 		return element;
 	}
 
